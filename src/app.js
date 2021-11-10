@@ -4,7 +4,7 @@ var app = express();
 const routes = require('./route')
 const DB = require('./config/connectDB');
 DB()
-const PORT = 4000 || process.env.PORT;
+const PORT = 3000 || process.env.PORT;
 // set the view engine to ejs
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
