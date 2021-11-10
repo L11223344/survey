@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="../../public/images/css/table.css">
+<h1 style="text-align: center;font-family: ui-monospace;">Welcome to Tournoment details</h1>
+<main class="container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let count=0; count < tournoment.length; count++) { %>
+                <tr class="active-row">
+                    <td class="text-center">
+                        <%= tournoment[count].Title %>
+                    </td>
+                    <td class="text-center">
+                        <%= tournoment[count].Description %>
+                    </td>
+                    <td class="text-center">
+                        <%= tournoment[count].Description %>
+                    </td>
+                    <td class="text-center">
+                        <%= tournoment[count].Description %>
+                    </td>
+                    <td>
+                        <a href="/v1/touronoment/delete/<%=tournoment[count]._id %>">
+                            <button style="    padding: 4px 24px;
+                            border: none;
+                            background-color: #ff5959;
+                            cursor:pointer;
+                            color: white;" type="button" class="btn btn-secondary">DELETE</button>
+                        </a>
+                        <a href="/v1/touronoment/update/<%=tournoment[count]._id %>">
+                            <button style=" padding: 4px 24px;
+                            border: none;
+                            background-color:#adadad;
+                            cursor:pointer;
+                            color: white" type="button" class="btn btn-danger">UPDATE</button>
+                        </a>
+
+                    </td>
+                </tr>
+                <% } %>
+                    <!-- and so on... -->
+        </tbody>
+    </table>
+</main>

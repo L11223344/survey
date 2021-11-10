@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../../public/images/css/table.css">
+<h1 style="text-align: center;font-family: ui-monospace;"> Welcome to Survey details</h1>
+<main class="container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Name</th>
+                <th>Survey Date</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let count=0; count < survey.length; count++) { %>
+                <tr class="active-row">
+                    <td class="text-center">
+                        <%= survey[count].Title %>
+                    </td>
+                    <td class="text-center">
+                        <%= survey[count].Description %>
+                    </td>
+                    <td class="text-center">
+                        <%= survey[count].SurveyDate %>
+                    </td>
+                    <td class="text-center">
+                        <%= survey[count].SurveyDate %>
+                    </td>
+                    <td>
+                        <a href="/v1/survey/delete/<%=survey[count]._id %>">
+                            <button style="    padding: 4px 24px;
+                                border: none;
+                                background-color: #ff5959;
+                                cursor:pointer;
+                                color: white;" type="button" class="btn btn-secondary">Delete</button>
+                        </a>
+                        <a href="/v1/survey/update/<%=survey[count]._id %>">
+                            <button style="  padding: 4px 24px;
+                            border: none;
+                            background-color:#adadad;
+                            cursor:pointer;
+                            color: white;" type="button" class="btn btn-danger">Update</button>
+                        </a>
+
+
+                    </td>
+                </tr>
+                <% } %>
+                    <!-- and so on... -->
+        </tbody>
+    </table>
+</main>

@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="../../public/images/css/editform.css">
+<div>
+    <h1 style="text-align: center; margin-top: 30px;font-family: initial">
+        Edit Survey Page
+    </h1>
+
+    <div style="border: 1px solid #b9b9b9;
+        max-width: 256px;
+        margin: auto;
+        margin-top: 50px;
+        padding: 1rem 1rem">
+        <div class="forms_slider">
+            <form method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input style="    margin-bottom: 10px;
+                        display: block;
+                        width: 100%;
+                        padding: 7px;
+                        margin-top: 3px
+                    ;" name="Title" style="margin-bottom:10px" type="Title" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=Title%>" placeholder="Title"
+                        required>
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input style="margin-bottom: 10px; display: block;
+                        width: 100%;
+                        padding: 7px;
+                        margin-top: 3px;" name="Description" type="Description" class="form-control"
+                        id="exampleInputPassword1" value="<%=Description%>" placeholder="Description" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Name</label>
+                    <input style="margin-bottom: 10px;
+                        display: block;
+                        width: 100%;
+                        padding: 7px;
+                        margin-top: 3px;" name="surveyname" type='text' class="form-control" id="exampleInputPassword1"
+                        value="<%=surveyname%>" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Survey Date</label>
+                    <input style="    margin-bottom: 10px;
+                        display: block;
+                        width: 100%;
+                        padding: 7px;
+                        margin-top: 3px;" name="SurveyDate" type="" class="form-control" id="exampleInputPassword1"
+                        value="<%=SurveyDate%>" placeholder="" required>
+                </div>
+
+                <button style="
+                border: none;
+                width: 100%;
+                padding: 9px 5px;
+                cursor: pointer;
+                background-color: #4444ff;
+                color: white;
+                font-size: 17px;
+            " id='form_button' type="submit" class="btn btn-primary">Update</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>

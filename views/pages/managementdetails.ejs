@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../../public/images/css/table.css">
+<h1 style="text-align: center;font-family: ui-monospace;">Welcome to Management details</h1>
+<main class="container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Name</th>
+                <th>Management Role</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let count=0; count < management.length; count++) { %>
+                <tr class="active-row">
+                    <td class="text-center">
+                        <%= management[count].Title %>
+                    </td>
+                    <td class="text-center">
+                        <%= management[count].Description %>
+                    </td>
+                    <td class="text-center">
+                        <%= management[count].Description %>
+                    </td>
+                    <td class="text-center">
+                        <%= management[count].Description %>
+                    </td>
+                    <td>
+                        <a href="/v1/management/delete/<%=management[count]._id %>">
+                            <button style=" padding: 4px 24px;
+                            border: none;
+                            background-color: #ff5959;
+                            cursor:pointer;
+                            color: white;" type="button" class="btn btn-secondary">Delete</button>
+                        </a>
+                        <a href="/v1/management/update/<%=management[count]._id %>">
+                            <button style="padding: 4px 24px;
+                            border: none;
+                            background-color:#adadad;
+                            cursor:pointer;
+                            color: white;" type="button" class="btn btn-danger">Update</button>
+                        </a>
+
+
+                    </td>
+                </tr>
+                <% } %>
+                    <!-- and so on... -->
+        </tbody>
+    </table>
+</main>
