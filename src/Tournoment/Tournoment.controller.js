@@ -4,7 +4,7 @@ const Tournoment = require('./Tournoment.model')
 
 
 const createTouronoment = async (req, res, next) => {
-
+    console.log('body', req.body)
     const tournoment = new Tournoment(req.body);
     const r = await tournoment.save();
 

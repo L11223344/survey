@@ -6,8 +6,8 @@ let bookModel = mongoose.Schema(
     {
         Title: String,
         Description: String,
-        Name: String,
-        TournomentDate: String
+        name: String,
+        tournmentdate: String
     },
     {
         collection: "Tournoment"
