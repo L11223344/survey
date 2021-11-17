@@ -1,8 +1,9 @@
 const express = require('express');
+const { checkUser } = require('../Middlewares/auth.middleware')
 const Management = require('./management.model')
 const router = express.Router();
 const { createManagement, deleteManagement, updateManagement, updateandGetManagement } = require('./management.controller');
-router.get('/management', (req, res) => {
+router.get('/management', checkUser, (req, res) => {
     res.render('pages/management')
 })
 
@@ -12,7 +13,7 @@ router.post('/update/:id', updateManagement)
 router.get('/update/:id', updateandGetManagement)
 
 
-router.get('/list', async (req, res) => {
+router.get('/list', checkUser, async (req, res) => {
     const managementDetails = await Management.find({});
     res.render('pages/managementdetails', {
         management: managementDetails

@@ -4,27 +4,43 @@
             <img id="navbar_image" src="../../public/images/logos.jpg" alt="" width="40" height="40">
             <a style="margin-left: 12px;" class="navbar-brand" href="#">Lions Tech</a>
         </div>
-        <div style="margin-left: 450px;">
-            <a href="/v1/survey/list" class="btn btn-secondary btn-sm active" role="button"
-                aria-pressed="true">Survey</a>
-            <a href="/v1/management/list" class="btn btn-secondary btn-sm active" role="button"
-                aria-pressed="true">Management</a>
-            <a href="/v1/touronoment/list" class="btn btn-secondary btn-sm active" role="button"
-                aria-pressed="true">Tournoment</a>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Hero
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/v1/survey/survey">add Survey</a></li>
-                <li><a class="dropdown-item" href="/v1/touronoment/tournoment">add Tournoment</a></li>
-                <li><a class="dropdown-item" href="/v1/management/management"> add Management</a></li>
-            </ul>
-        </div>
+        <% console.log('userinfo',userinfo) %>
 
 
+            <div style="margin-left: 200px;">
+                <a href="/v1/survey/list" class="btn btn-secondary btn-sm active" role="button"
+                    aria-pressed="true">Survey</a>
+                <a href="/v1/management/list" class="btn btn-secondary btn-sm active" role="button"
+                    aria-pressed="true">Management</a>
+                <a href="/v1/touronoment/list" class="btn btn-secondary btn-sm active" role="button"
+                    aria-pressed="true">Tournoment</a>
+            </div>
+
+
+            <% if(userinfo){ %>
+                <a href="/v1/auth/logoutview" class="btn btn-danger btn-sm active" role="button"
+                    aria-pressed="true">Logout</a>
+                <% } else { %>
+                    <a href="/v1/auth/loginview" class="btn btn-success btn-sm active" role="button"
+                        aria-pressed="true">Login</a>
+                    <a style=" margin-left: 179px" href="/v1/auth/signupview" class="btn btn-primary btn-sm active"
+                        role="button" aria-pressed="true">Signup</a>
+                    <% } %>
+
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hero
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/v1/survey/survey">add Survey</a></li>
+                                <li><a class="dropdown-item" href="/v1/touronoment/tournoment">add Tournoment</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/v1/management/management"> add Management</a>
+                                </li>
+                            </ul>
+                        </div>
 
     </div>
 </nav>

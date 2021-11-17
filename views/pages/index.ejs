@@ -7,20 +7,22 @@
 
 <body>
 
-    <header>
-        <%- include('../partials/header'); %>
-    </header>
+    <%- include('../partials/header',userinfo=userinfo) %>
 
-    <main style="margin-top: 90px;" class="container">
-        <div class="jumbotron">
-            <h1>This is great !</h1>
-            <p>Welcome & Tell them what to expect on the first day.</p>
-        </div>
-    </main>
+        <header>
 
-    <footer>
-        <%- include('../partials/footer'); %>
-    </footer>
+        </header>
+
+        <main style="margin-top: 90px;" class="container">
+            <div class="jumbotron">
+                <h1>This is great !</h1>
+                <p>Welcome & Tell them what to expect on the first day.</p>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
 
 </body>
 
