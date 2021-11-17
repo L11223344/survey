@@ -19,7 +19,7 @@ const createLogin = async (req, res, next) => {
     if (userExists.length == 0) {
         console.log('user nae hay')
 
-        res.redirect('/v1/auth/signupview')
+        res.redirect('/v1/auth/loginview')
 
     } else {
 
