@@ -4,11 +4,12 @@ const Tournoment = require('./Tournoment.model')
 
 
 const createTouronoment = async (req, res, next) => {
-    console.log('body', req.body)
+    console.log('bbb', req.body)
     const tournoment = new Tournoment(req.body);
     const r = await tournoment.save();
 
     const tournomentDetails = await Tournoment.find({});
+    console.log('t', tournomentDetails)
 
     res.render('pages/tournomentdetails',
         {
@@ -21,7 +22,6 @@ const createTouronoment = async (req, res, next) => {
 
 const deleteTournoment = async (req, res, next) => {
     const id = req.params.id;
-    console.log('id', id)
     const deletedTournoment = await Tournoment.findOneAndDelete(id);
 
 
@@ -32,7 +32,9 @@ const deleteTournoment = async (req, res, next) => {
 const updateTournoment = async (req, res, next) => {
     const updateToronoment = await Tournoment.findByIdAndUpdate(req.params.id, {
         Title: req.body.Title,
-        Description: req.body.Description
+        Description: req.body.Description,
+        name: req.body.name,
+        tournmentdate: req.body.tournmentdate
     });
     res.redirect('/v1/touronoment/list')
 }
@@ -42,7 +44,9 @@ const updateDetails = async (req, res) => {
     const touronmentFound = await Tournoment.findById(id);
     res.render('pages/tournmentedit', {
         Title: touronmentFound.Title,
-        Description: touronmentFound.Description
+        Description: touronmentFound.Description,
+        name: touronmentFound.name,
+        tournmentdate: touronmentFound.tournmentdate
     })
 }
 module.exports = {

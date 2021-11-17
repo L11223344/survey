@@ -4,6 +4,7 @@ const Survey = require('./survey.model')
 
 
 const createSurvey = async (req, res, next) => {
+    console.log('vvv', req.body)
     const survey = new Survey(req.body);
     const r = await survey.save();
     const surveyDetails = await Survey.find({});
@@ -23,11 +24,13 @@ const deleteSurvey = async (req, res, next) => {
 
 // update for survey
 const updateSurvey = async (req, res) => {
+    console.log('reeee', req.body)
     const updateToronoment = await Survey.findByIdAndUpdate(req.params.id, {
         Title: req.body.Title,
         Description: req.body.Description,
-        surveyname: req.body.surveyname,
-        SurveyDate: req.body.SurveyDate
+        Name: req.body.Name,
+        SurveyDate: req.body.SurveyDate,
+
     });
     res.redirect('/v1/survey/list')
 }
@@ -35,12 +38,13 @@ const updateSurvey = async (req, res) => {
 const updateandGetSurvay = async (req, res) => {
     let id = req.params.id;
     const touronmentFound = await Survey.findById(id);
-    console.log('tournment', touronmentFound)
+    console.log('tournment', req.body)
     res.render('pages/surveyedit', {
         Title: touronmentFound.Title,
         Description: touronmentFound.Description,
-        surveyname: req.body.surveyname,
-        SurveyDate: req.body.SurveyDate
+        Name: touronmentFound.Name,
+        SurveyDate: touronmentFound.SurveyDate,
+
     })
 }
 
